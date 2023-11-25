@@ -1,0 +1,64 @@
+@font-face {
+    font-family: minhaFonte;
+    src: url(overthink_3/Overthink.ttf);
+}
+body{
+    height: 100vh;
+    background-image: url('https://invexo.com.br/blog/wp-content/uploads/2021/06/Barbearia-Ipanema.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.telaCadastro{
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 80px;
+    border-radius: 12px;
+    color: #fff;
+    
+}
+
+.telaCadastro h1{
+    font-family: minhaFonte;
+    font-size: 3.0rem;
+    text-align: center;
+}
+.input{
+    outline: none;
+    border: none;
+    padding: 15px;
+    font-size: 15px;
+    border-radius: 12px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.8);
+    
+}
+
+.button{
+    background-color: orange;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+    width: 100%;
+}
+
+.button:hover{
+    scale: 1.05;
+    color: #fff;
+}
+
+.button:active{
+    scale: 0.95;
+}

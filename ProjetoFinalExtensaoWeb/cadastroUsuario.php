@@ -24,7 +24,7 @@
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="cadastroUsuario.css"/>
-    <title>Cadastro de Usuario</title>
+    <title>Cadastro de Produtos</title>
 </head>
 <body>
     <div id="video-container">
@@ -61,7 +61,7 @@
             <div class="telaCadastro">
                 <form action="cadastroUsuario.php" method="POST">
                       
-                            <h1>Produtos</h1>
+                            <h1>Cadastro Produtos</h1>
                             <input class="input" name="NomeProduto" type="text" placeholder="Nome do Produto" required>
                             <label for="NomeProduto"></label>
                             <input class="input" name="Codigo" type="text" placeholder="Codigo do Produto" required>

@@ -1,31 +1,35 @@
 <?php
     include_once('config.php');
-
-    if(!empty($_GET['idcadastro_produtos']))
+  //  $idcadastro_produtos = $_GET['id'];
+  
+   if(!empty($_GET['id']))
     {
-        $idcadastro_produtos = $_GET['idcadastro_produtos'];
-        $sqlSelect = "SELECT * FROM cadastro_produtos WHERE idcadastro_produtos=$idcadastro_produtos";
+        $idcadastro_produtos = $_GET['id'];
+        $sqlSelect = "SELECT * FROM cadastro_produtos WHERE idcadastro_produtos= $idcadastro_produtos";
+       
         $result = $conexao->query($sqlSelect);
+      
         if($result->num_rows > 0)
         {
             while($user_data = mysqli_fetch_assoc($result))
             {
-                    $nome_produto = $user_data['NomeProduto'];
-                    $codigo = $user_data['Codigo'];
-                    $valor = $user_data['Valor'];
-                    $descricao = $user_data['Descricao'];
-                    $estoque = $user_data['Estoque'];
+                    $nome_produto = $user_data['nome_produto'];
+                    $codigo = $user_data['codigo'];
+                    $valor = $user_data['valor'];
+                    $descricao = $user_data['descricao'];
+                    $estoque = $user_data['estoque'];
             }
         }
         else
         {
-          //  header('Location: sistema.php');
+           // header('Location: sistema.php');
         }
     }
     else
     {
        // header('Location: sistema.php');
     }
+   
 ?>
 
 <!DOCTYPE html>
@@ -74,24 +78,24 @@
             <div class="telaCadastro">
                 <form action="salvarProduto.php" method="POST">
                       
-                            <h1>Produtos</h1>
-                            <input class="input" name="NomeProduto" type="text" placeholder="Nome do Produto" value="<?php echo $nome_produto ?>" required>
+                            <h1>Editar Produtos</h1>
+                            <input class="input" name="nome_produto" type="text" placeholder="Nome do Produto" value="<?php echo $nome_produto ?>" required>
                             <label for="NomeProduto"></label>
-                            <input class="input" name="Codigo" type="text" placeholder="Codigo do Produto"   required>
+                            <input class="input" name="Codigo" type="text" placeholder="Codigo do Produto" value="<?php echo $codigo ?>"  required>
                             <label for="Codigo"></label>
                             <br>
                             <br>
-                            <input class="input" name="Valor" type="text" placeholder="Valor" required>
+                            <input class="input" name="valor" type="text" placeholder="Valor" value="<?php echo $valor ?>" required>
                             <label for="valor"></label>
-                            <input class="input" name="Descricao" type="text"  placeholder="Descricao"  required>
+                            <input class="input" name="descricao" type="text"  placeholder="Descricao" value="<?php echo $descricao ?>"  required>
                             <label for="Descricao"></label>          
                             <br>
                             <br>   
-                            <input class="input" name="Estoque" type="text" placeholder="Quantidade em Estoque"  required>
+                            <input class="input" name="estoque" type="text" placeholder="Quantidade em Estoque" value="<?php echo $estoque ?>"  required>
                             <label for="Estoque"></label>                         
                             <br>
                             <br>
-                            <input type="hidden" name="id" value="<?php echo $idcadastro_produtos ?>"> 
+                            <input type="hidden" name="idcadastro_produtos" value="<?php echo $idcadastro_produtos ?>"> 
                             <input type="submit" name="update" class="button">
                             <br>
                             <br>

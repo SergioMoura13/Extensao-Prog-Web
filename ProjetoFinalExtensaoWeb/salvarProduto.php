@@ -3,14 +3,17 @@
 
         if(isset($_POST['update'])){
 
-                    $nome_produto = $user_data['NomeProduto'];
-                    $codigo = $user_data['Codigo'];
-                    $valor = $user_data['Valor'];
-                    $descricao = $user_data['Descricao'];
-                    $estoque = $user_data['Estoque'];
+                    $idcadastro_produtos = $_POST['idcadastro_produtos'];
+                    $nome_produto = $_POST['nome_produto'];
+                    $codigo = $_POST['codigo'];
+                    $valor = $_POST['valor'];
+                    $descricao = $_POST['descricao'];
+                    $estoque = $_POST['estoque'];
 
                     $sqlUpdate = "UPDATE cadastro_produtos SET nome_produto='$nome_produto', codigo='$codigo', valor='$valor', descricao='$descricao', estoque='$estoque'
-                    WHERE  id='$idcadastro_produtos'";
+                    WHERE  idcadastro_produtos='$idcadastro_produtos'";
+
+                $result = $conexao->query($sqlUpdate);
 
         }
                     

@@ -4,15 +4,15 @@
     {
         include_once('config.php');
 
-        $id = $_GET['id'];
+        $idcadastro_produtos = $_GET['id'];
 
-        $sqlSelect = "SELECT *  FROM cadastro_produtos WHERE id=$id";
+        $sqlSelect = "SELECT *  FROM cadastro_produtos WHERE idcadastro_produtos=$idcadastro_produtos";
 
         $result = $conexao->query($sqlSelect);
 
         if($result->num_rows > 0)
         {
-            $sqlDelete = "DELETE FROM  cadastro_produtos WHERE id=$id";
+            $sqlDelete = "DELETE FROM  cadastro_produtos WHERE idcadastro_produtos=$idcadastro_produtos";
             $resultDelete = $conexao->query($sqlDelete);
         }
     }
